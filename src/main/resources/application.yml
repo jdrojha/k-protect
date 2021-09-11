@@ -1,0 +1,25 @@
+server.port: 7003
+
+spring.jpa.hibernate.ddl-auto: update
+
+spring.datasource:
+  url: jdbc:mysql://localhost:3306/kp-appuser
+  username: root
+  password: root
+
+spring.datasource.hikari.initializationFailTimeout: 60000
+
+logging:
+  level:
+    root: INFO
+    com.kprotect.appuserservice: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+---
+spring.profiles: docker
+
+spring.datasource:
+  url: jdbc:mysql://mysql/kp-appuser
+
+server.port: 8080
